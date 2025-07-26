@@ -1,4 +1,5 @@
-import 'dart:io';
+// ignore_for_file: use_rethrow_when_possible
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:ecommerce/features/profile/domain/entities/profile_model.dart';
@@ -12,6 +13,7 @@ abstract class ProfileRemoteDataSource {
 }
 
 class ProfileRemoteDataSourceImpl implements ProfileRemoteDataSource {
+  // ignore: unused_field
   final FirebaseStorage _firebaseStorage;
   final FirebaseFirestore _firebaseFirestore;
 
@@ -39,6 +41,7 @@ class ProfileRemoteDataSourceImpl implements ProfileRemoteDataSource {
         imageUrl: profileData['imageUrl'] ?? '',
       );
     } catch (e) {
+      // ignore: use_rethrow_when_possible
       throw e;
     }
   }
@@ -53,6 +56,7 @@ class ProfileRemoteDataSourceImpl implements ProfileRemoteDataSource {
         'imageUrl': profileModel.imageUrl,
       });
     } catch (e) {
+      // ignore: use_rethrow_when_possible
       throw e;
     }
   }
@@ -64,7 +68,7 @@ class ProfileRemoteDataSourceImpl implements ProfileRemoteDataSource {
         'username': profileModel.username,
         'phoneNumber': profileModel.phoneNumber,
         'address': profileModel.address,
-        'imageUrl': profileModel.imageUrl ?? '',
+        'imageUrl': profileModel.imageUrl,
       });
     } catch (e) {
       throw e;

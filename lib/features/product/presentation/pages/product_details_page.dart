@@ -266,6 +266,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class ProductDetailsPage extends StatefulWidget {
   final ProductModel product;
 
+  // ignore: use_super_parameters
   const ProductDetailsPage({Key? key, required this.product}) : super(key: key);
 
   @override

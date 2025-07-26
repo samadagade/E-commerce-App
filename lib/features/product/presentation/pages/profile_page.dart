@@ -265,6 +265,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+// ignore: use_key_in_widget_constructors
 class UserProfileScreen extends StatefulWidget {
   @override
   State<UserProfileScreen> createState() => _UserProfileScreenState();
@@ -350,8 +351,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                                     CircleAvatar(
                                       radius: 40,
                                       backgroundImage: NetworkImage(
-                                        state.profile.imageUrl ??
-                                            'https://via.placeholder.com/150', // Default image
+                                        state.profile.imageUrl, // Default image
                                       ),
                                     ),
                                     Positioned(
@@ -370,6 +370,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                                                   builder: (context) =>
                                                       UpdateProfilePage()),
                                             ).then((_) {
+                                              // ignore: use_build_context_synchronously
                                               context.read<ProfileBloc>().add(
                                                   GetProfileEvent(user!.uid));
                                             });
@@ -413,6 +414,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                             MaterialPageRoute(
                                 builder: (context) => UpdateProfilePage()),
                           ).then((_) {
+                            // ignore: use_build_context_synchronously
                             context
                                 .read<ProfileBloc>()
                                 .add(GetProfileEvent(user!.uid));
@@ -516,6 +518,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
     return ListTile(
       leading: Container(
         decoration: BoxDecoration(
+          // ignore: deprecated_member_use
           color: Colors.blue.withOpacity(0.1),
           shape: BoxShape.circle,
         ),

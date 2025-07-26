@@ -132,6 +132,8 @@
 //   }
 // }
 
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:ecommerce/core/constants/constants.dart';
 import 'package:ecommerce/features/profile/domain/entities/profile_model.dart';
 import 'package:ecommerce/features/profile/presentation/bloc/profile_bloc.dart';
@@ -141,6 +143,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+// ignore: use_key_in_widget_constructors
 class UpdateProfilePage extends StatefulWidget {
   @override
   _UpdateProfilePageState createState() => _UpdateProfilePageState();

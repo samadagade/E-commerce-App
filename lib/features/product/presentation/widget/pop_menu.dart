@@ -6,6 +6,7 @@ import 'package:ecommerce/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:ecommerce/features/auth/presentation/bloc/auth_event.dart';
 
 class EnhancedAppBar extends StatelessWidget implements PreferredSizeWidget {
+  // ignore: prefer_const_constructors_in_immutables, use_super_parameters
   EnhancedAppBar({Key? key})
       : preferredSize = const Size.fromHeight(kToolbarHeight),
         super(key: key);
@@ -31,6 +32,7 @@ class EnhancedAppBar extends StatelessWidget implements PreferredSizeWidget {
 }
 
 class UserMenu extends StatelessWidget {
+  // ignore: use_super_parameters
   const UserMenu({Key? key}) : super(key: key);
 
   @override

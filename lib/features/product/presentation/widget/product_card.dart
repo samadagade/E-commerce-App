@@ -6,6 +6,7 @@ class ProductCard extends StatelessWidget {
   final Color bgColor;
   final VoidCallback? onTap;
 
+  // ignore: use_super_parameters
   const ProductCard({
     Key? key,
     required this.product,
@@ -24,6 +25,7 @@ class ProductCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
             BoxShadow(
+              // ignore: deprecated_member_use
               color: Colors.black.withOpacity(0.1),
               blurRadius: 8,
               offset: const Offset(0, 4),
@@ -88,6 +90,7 @@ class ProductCard extends StatelessWidget {
               child: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 decoration: BoxDecoration(
+                  // ignore: deprecated_member_use
                   color: Colors.black.withOpacity(0.7),
                   borderRadius: BorderRadius.circular(12),
                 ),

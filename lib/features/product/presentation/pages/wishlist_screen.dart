@@ -29,6 +29,7 @@ class WishlistScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     double screenWidth = MediaQuery.of(context).size.width;
     final bool isTablet = screenWidth > 600;
     final bool isDesktop = screenWidth > 1024;
@@ -63,6 +64,7 @@ class WishlistScreen extends StatelessWidget {
       ),
       body: BlocBuilder<ProductBloc, ProductState>(
         builder: (context, state) {
+ 
           if (state is ProductLoading) {
             return const Center(child: CircularProgressIndicator());
           } else if (state is ProductError) {
@@ -129,6 +131,7 @@ class WishlistScreen extends StatelessWidget {
                   final product = favoriteProducts[index];
                   final color = Colors
                       .primaries[index % Colors.primaries.length]
+                      // ignore: deprecated_member_use
                       .withOpacity(0.1);
 
                   return ProductCard(

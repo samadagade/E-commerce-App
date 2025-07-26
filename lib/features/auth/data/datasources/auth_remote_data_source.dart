@@ -46,9 +46,9 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     );
 
     User? user = userCredential.user;
+        // ignore: unused_local_variable
         String? idToken = await userCredential.user?.getIdToken();
 
-     print("JWT Token or ID token is $idToken");
     if (user != null) {
       // Reload the user to ensure the latest verification status
       await user.reload();
@@ -75,6 +75,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   Future<User?> continueWithGoogle() async {
     var user = kIsWeb ? _firebaseAuth.signInWithPopup(_googleAuthProvider) : await _firebaseAuth.signInWithProvider(_googleAuthProvider);
 
+    // ignore: unnecessary_null_comparison
     if (user != null) {
       await _authLocalDataSource.saveUserId(_firebaseAuth.currentUser!.uid);
     }
@@ -89,6 +90,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       //await _googleSignIn.signOut();
       await _authLocalDataSource.clearUserId();
     } catch (e) {
+      // ignore: use_rethrow_when_possible
       throw e;
     }
   }

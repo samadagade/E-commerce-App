@@ -109,7 +109,7 @@ class _ProfileScreenState extends State<ProfileSetupScreen> {
                 phoneNumber: profileState.profile.phoneNumber,
                 address: profileState.profile.address,
                 imageUrl:
-                    profileState.profile.imageUrl ?? Constant.profileImages[0],
+                    profileState.profile.imageUrl,
               ),
               userId,
             ),

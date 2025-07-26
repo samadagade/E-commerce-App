@@ -33,6 +33,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+// ignore: depend_on_referenced_packages
 import 'package:http/http.dart' as http;
 
 final serviceLocator = GetIt.instance;
@@ -73,7 +74,6 @@ Future<void> setUpServiceLocator(SharedPreferences sharedPreferences) async {
 
   //bloc of Auth
   serviceLocator.registerFactory<AuthBloc>(() {
-    print("Auth Bloc instance provided from service locator");
     return AuthBloc(
       continueWithGoogleUseCase: ContinueWithGoogleUseCase(serviceLocator()),
       signInWithEmailUseCase: SignInWithEmailUseCase(serviceLocator()),
@@ -130,7 +130,6 @@ Future<void> setUpServiceLocator(SharedPreferences sharedPreferences) async {
 
   //profile bloc
   serviceLocator.registerFactory<ProfileBloc>(() {
-    print("Profile Bloc instance provided from service locator");
     return ProfileBloc(
       saveProfileUseCase: serviceLocator(),
       updateProfileUseCase: serviceLocator(),
@@ -173,7 +172,6 @@ Future<void> setUpServiceLocator(SharedPreferences sharedPreferences) async {
 
   //bloc of cart
   serviceLocator.registerFactory(() {
-    print("Cart Bloc instance provided from service locator");
     return CartBloc(
         getCartUseCase: serviceLocator(),
         addToCartUseCase: serviceLocator(),

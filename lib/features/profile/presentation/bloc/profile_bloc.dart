@@ -18,7 +18,6 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     required this.saveProfileUseCase,
     required this.updateProfileUseCase,
   }) : super(ProfileInitial()) {
-    print("profile bloc instance created");
     on<CheckProfileStatusEvent>(_onCheckProfileStatus);
     on<GetProfileEvent>(_onGetProfile);
     on<SaveProfileEvent>(_onSaveProfile);

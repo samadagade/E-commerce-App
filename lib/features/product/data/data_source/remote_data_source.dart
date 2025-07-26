@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecommerce/features/product/domain/entity/product_model.dart';
@@ -27,9 +29,9 @@ class RemoteDataSourceImpl implements RemoteDataSource {
     final response = await client.get(Uri.parse(apiUrl));
 
     if (response.statusCode == 200) {
+      // ignore: non_constant_identifier_names
       Map<String, dynamic> response_map = json.decode(response.body);
       final List<dynamic> data = response_map["products"];
-      print("object");
       return data.map((json) => ProductModel.fromJson(json)).toList();
     } else {
       throw Exception(
@@ -37,6 +39,7 @@ class RemoteDataSourceImpl implements RemoteDataSource {
     }
   }
 
+  @override
   Future<void> addToCart(String userId, String productId, int quantity) async {
     // Reference to the user's cart in Firestore
     final cartRef = firestore.collection('cart').doc(userId);
@@ -92,11 +95,11 @@ class RemoteDataSourceImpl implements RemoteDataSource {
             ]
           });
         } else {
+          // ignore: avoid_print
           print("Cannot decrement a product from an empty cart");
         }
       }
     } catch (e) {
-      print("Error in addToCart: $e");
       throw Exception("Failed to update the cart: $e");
     }
   }

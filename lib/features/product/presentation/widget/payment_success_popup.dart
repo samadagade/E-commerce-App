@@ -23,6 +23,7 @@ void showPaymentSuccessDialog(BuildContext context) {
                   Container(
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
+                      // ignore: deprecated_member_use
                       color: Constant.colorOrg.withOpacity(0.2),
                     ),
                     padding:  EdgeInsets.all(15),

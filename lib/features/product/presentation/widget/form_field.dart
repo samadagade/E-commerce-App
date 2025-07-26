@@ -1,4 +1,3 @@
-import 'package:ecommerce/core/constants/constants.dart';
 import 'package:flutter/material.dart';
 
 class ReusableFormField extends StatelessWidget {
@@ -11,6 +10,7 @@ class ReusableFormField extends StatelessWidget {
   final String? Function(String?)? validator;
   final IconData prefixIcon;
 
+  // ignore: use_super_parameters
   const ReusableFormField({
     required this.labelText,
     required this.controller,
@@ -42,6 +42,7 @@ class ReusableFormField extends StatelessWidget {
               )
             : null,
         filled: true,
+        // ignore: deprecated_member_use
         fillColor: Colors.white.withOpacity(0.6),
         contentPadding: EdgeInsets.symmetric(vertical: 18.0, horizontal: 16.0),
         enabledBorder: OutlineInputBorder(

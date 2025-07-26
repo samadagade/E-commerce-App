@@ -20,9 +20,11 @@ class BottomNavigation extends StatefulWidget {
    
   final int? selectedIndex;
 
+   // ignore: prefer_const_constructors_in_immutables, use_key_in_widget_constructors
    BottomNavigation({this.selectedIndex = 0});
   
   @override
+  // ignore: library_private_types_in_public_api
   _ProductScreenState createState() => _ProductScreenState();
 }
 
@@ -61,6 +63,7 @@ class _ProductScreenState extends State<BottomNavigation> {
             ],
           ),
           child: BottomNavigationBar(
+            // ignore: deprecated_member_use
             backgroundColor: Constant.colorOrg.withOpacity(0.8), // White background for a cleaner look
             elevation: 0,
             type: BottomNavigationBarType.fixed,

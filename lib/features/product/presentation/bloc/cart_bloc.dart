@@ -24,7 +24,6 @@ class CartBloc extends Bloc<CartEvent, CartState> {
     required this.removeFromCartUseCase,
     required this.fetchProuctUseCase,
   }) : super(CartInitial()) {
-    print("cart bloc instance created");
     on<LoadCart>(_onLoadCart);
     on<AddToCart>(_onAddToCart);
     on<RemoveFromCart>(_onRemoveFromCart);
@@ -47,6 +46,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
             final productDetails = _productMap[productId];
 
             if (productDetails!.isEmpty) {
+              // ignore: avoid_print
               print(
                   "Warning: Product details for productId $productId not found in _productMap");
             }

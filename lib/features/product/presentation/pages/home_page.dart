@@ -802,7 +802,9 @@ class _HomePageState extends State<HomePage> {
                                     borderRadius: BorderRadius.circular(18),
                                     gradient: LinearGradient(
                                       colors: [
+                                        // ignore: deprecated_member_use
                                         Colors.black.withOpacity(0.1),
+                                        // ignore: deprecated_member_use
                                         Colors.black.withOpacity(0.5),
                                       ],
                                       begin: Alignment.topCenter,
@@ -937,6 +939,7 @@ class _HomePageState extends State<HomePage> {
                                   ],
                                 ),
                               ),
+                              // ignore: deprecated_member_use
                               ButtonBar(
                                 alignment: MainAxisAlignment.spaceBetween,
                                 children: [
