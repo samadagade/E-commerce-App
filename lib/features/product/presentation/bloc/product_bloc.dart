@@ -25,6 +25,7 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
       emit(ProductLoading());
 
     if(_productModel.isNotEmpty){
+      add(LoadFavoriteProductsIdEvent());
       emit(ProductLoaded(_productModel));
       return ;
     }

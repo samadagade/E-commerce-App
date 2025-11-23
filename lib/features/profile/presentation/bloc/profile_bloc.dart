@@ -1,3 +1,4 @@
+import 'package:ecommerce/features/product/domain/usecases/get_favourite_products_id_use_case.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ecommerce/features/profile/domain/usecase/check_profile_status_use_case.dart';
 import 'package:ecommerce/features/profile/domain/usecase/get_profile_use_case.dart';

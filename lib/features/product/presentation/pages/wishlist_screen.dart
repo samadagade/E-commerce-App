@@ -1,23 +1,3 @@
-// import 'package:flutter/material.dart';
-
-// class WishlistScreen extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text("Wishlist"),
-//       ),
-
-//       body:  Center(
-//         child:  Text(
-//         'Wish List Screen',
-//         style: TextStyle(fontSize: 24),
-//       ),
-//       ),
-//     );
-//   }
-// }
-
 import 'package:ecommerce/core/constants/constants.dart';
 import 'package:ecommerce/features/product/presentation/bloc/product_bloc.dart';
 import 'package:ecommerce/features/product/presentation/widget/product_card.dart';
